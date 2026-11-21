@@ -1,0 +1,44 @@
+name: Frontend CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            -t insolvency-frontend:${{ github.sha }} \
+            ./frontend
+
+      - name: Export Docker image
+        if: github.event_name == 'push'
+        run: |
+          docker save \
+            -o frontend-image.tar \
+            insolvency-frontend:${{ github.sha }}
+
+      - name: Upload Docker image artifact
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-image-${{ github.sha }}
+          path: frontend-image.tar
+          retention-days: 7
+          if-no-files-found: error
