@@ -1,0 +1,27 @@
+
+# Node
+node_modules/
+frontend/dist/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Application data
+backend/data/
+*.sqlite3
+notes.json
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

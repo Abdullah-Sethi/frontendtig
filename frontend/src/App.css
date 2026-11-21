@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f5f6f8;
+  color: #20242b;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 7%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: #20242b;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.brand p {
+  margin: 4px 0 0;
+  color: #737780;
+  font-size: 13px;
+}
+
+.main {
+  max-width: 1050px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.editor {
+  background: white;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+.editor h2,
+.notes-section h2 {
+  margin-top: 0;
+  font-size: 19px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d9dce2;
+  border-radius: 9px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #555d70;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.save {
+  background: #20242b;
+  color: white;
+}
+
+.cancel {
+  background: #eceef2;
+  color: #20242b;
+}
+
+.notes-section {
+  margin-top: 35px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-heading span {
+  color: #737780;
+  font-size: 14px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.note-card {
+  background: white;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+
+.note-card h3 {
+  margin-top: 0;
+}
+
+.note-card p {
+  white-space: pre-wrap;
+  color: #555d68;
+  line-height: 1.6;
+}
+
+.note-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.note-actions button {
+  background: #eef0f3;
+  font-size: 13px;
+}
+
+.note-actions .delete {
+  color: #b42318;
+  background: #fff0ee;
+}
+
+.empty {
+  text-align: center;
+  color: #737780;
+  padding: 35px;
+}
+
+.empty span {
+  font-size: 14px;
+}
+
+.error {
+  color: #b42318;
+  padding: 10px;
+  background: #fff0ee;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 18px 20px;
+  }
+
+  .main {
+    margin-top: 25px;
+  }
+
+  .editor {
+    padding: 18px;
+  }
+}
